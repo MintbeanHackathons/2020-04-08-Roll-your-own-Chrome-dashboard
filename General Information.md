@@ -28,7 +28,7 @@ Saturday, March 21, 2020
 
 ## Your responsibilities as a participant
 
-1. You must be signed into Twitch and Slack at all times
+1. You must be on Twitch and Slack at all times
 1. You must let us know, on Slack, when you've started.
 1. You must let us know, on Slack, when you've finished coding.
 1. You must let us know, on Slack, when you've finished code review.
