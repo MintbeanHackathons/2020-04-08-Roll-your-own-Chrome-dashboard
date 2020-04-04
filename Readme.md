@@ -1,84 +1,78 @@
-# Today's Objective: Interactive Calculator
+# Today's Objective: Live CSS Editor
 
 ## Prize
 
 $25 CAD Amazon gift card + bragging rights.
 
-Tip: Read the [General Information Document]("./General\ Information.md") for more info on how to get started and submit.
+Tip: Read the [General Information Document]("./General%20Information.md") for more info on how to get started and submit.
 
 ## Objective
 
-Interactive calculators are a beautiful way to inform, entertain, and educate people. Some of them are very beautiful, featuring graphs, charts, and animations. Many of them are simple, practical, and pragmatic. They find uses in marketing, engineering, finance, medicine -- pretty much every field. At some point in their careers, most developers have been involved in a calculator project or two.
+Today's objective is to create an in-site CSS editor of your own design.
 
-Here are some examples of interesting interactive calculators. Notice that they all vary in feature sets, functionality, objective, and scope. Some of them focus on beauty and aesthetics, while others focus on practicality and simplicity.
+Live CSS editors are handy tools that let you edit a website's styling in realtime. They are indispensible when building design-heavy websites, letting you iterate quickly through several different versions of a design before deciding what version you want to keep.
 
-* https://goodcalculators.com/meat-cooking-time-calculator/
-* https://www.bills.com/debt/tools/ways-to-save
-* https://paulhoughton.github.io/mortgage/
-* http://www.diablo3gemcalculator.com/
-* https://calculator.numerologist.com/
+Quick flashback: In 2017, I built a CSS editor that could edit the look of a website on the fly. [You can still find it on the Chrome extension webstore](https://chrome.google.com/webstore/detail/navi-live-css-editor/cbiegoddgmmhbaompgcnkhjgonpkpogc). I named it after my wife, Navi (who is also involved with Mintbean, by the way). browniePoints++ :-)
 
-Today's objective is to create a simple interactive calculator of your own design.
+## Requirements - NOT a Chrome Extension
 
-## Requirements
+So, this is your task:
 
-Create an interactive calculator! 
+Create a CSS Editor. When you type some CSS in the editor, it is immediately applied to the current website.
 
-The design can be of your own choosing, and so this project is very open-ended. Here are some suggestions:
+You do NOT need to build a Chrome Extension. You can build this right inside a web application.
 
-`Tip: Make sure you choose an EASY problem! You only have 2h15m to finish while also writing clean code.`
+Let's talk about the architecture.
 
-### Suggested project: Tip calculator
+### Architecture
 
-Take a restaurant bill and calculate how much tip you have to add on top of it. Easy peasy!
+There are 3 components you need here.
 
-Inputs: bill amount, tip percentage
-Outputs: tip amount, grand total
+First, you need an input field where you'll write code. This is either a plain textbox, a `div` with the `contenteditable` attribute, or a full-fledged library-driven editor like Ace or CodeMirror. See below for suggestions.
 
-### Suggested project: Bill split calculator
+Second, you need some kind of onChange listener that listens for changes to the input field.
 
-Take a restaurant bill and split it between a number of parties. 
+Third, you need a `style` tag that contains and gets updated with CSS. All you should have to do is output your CSS into the `style` tag's innerHTML, and the browser should pick it up immediately. 
 
-Inputs: bill amount, number of parties.
-Outputs: amount of money each party has to pay
-
-To make it more fun, you can maybe create some kind of way to assign greater or lower ratios of the bill to different parties.
-
-### Suggested project: Compound growth calculator
-
-Create a growth chart that tells you how fast a number will grow over time, given a growth rate.
-
-Input: initial number, growth rate
-Output: a chart or table that shows you how much the number has grown over time.
-
-### Or, do your own thing!
-
-You can create something cooler if you wish. Please don't copy/paste old projects, though -- write from scratch, even if you're inspired by the old project :-)
-
-## Restrictions
-
-You must be able to deploy your project online.
-Your project must use JavaScript.
-
-There are no other restrictions.
-
-## Technology suggestions
-
-* Templated HTML
-* React
-* Vue
-* Angular
-* Pure Express API - see StackOverflow link in "Library Suggestions" below
+Tada! CSS Editor!
 
 ## Library suggestions
 
-Avoid D3.js unless you're already experienced at it. D3 is very powerful for custom graphs, but has an extremely steep learning curve, making it unsuitable for this project.
+Let's talk about what you can use to build this.
 
-Good libraries to use:
-* Google Charts - https://developers.google.com/chart
-* Plotly - https://plotly.com/javascript/plotly-fundamentals/
-* ChartJS - https://www.chartjs.org/
-* If you're using strictly backend, see https://stackoverflow.com/questions/44543729/how-to-render-a-graph-as-image-in-node. We have not tested any of these suggestions, but [Vega](https://www.npmjs.com/package/vega) looks great so far.
+You should definitely NOT build a backend component for this project. This project is very easy to implement, and can be done with a simple HTML page and some JS files.
+
+Also, building a code editor from scratch is NOT recommended. Features like error-checking, linting, syntax highlighting, theming, and the like are very advanced and completely out of scope for this Hackathon. Instead, you might consider using a library.
+
+I've used the following libraries to do stuff like this, and they work pretty well:
+* Option 1: Ace Editor (easier and more polished. recommended for most people.)
+* Option 2: CodeMirror (slightly harder but more customizable, and fully open source)
+
+BUT! If using a library seems daunting, you can just use a plain textbox!
+* Option 3, for newbies: Use a plain textbox to write CSS in. No need to implement any advanced features at all :-)
+
+The design can be of your own choosing, and so this project is very open-ended.
+
+### Bonus Points: Package it as a Chrome Extension and upload a video
+
+Feeling gutsy? Want to do something out-of-the-ordinary?
+
+Building a chrome extension will get you extra points in Aesthetics and Code Quality. But please, only attempt it if you are confident about it :-) It can be tricky the first time around.
+
+You've already seen the extension I built: [Navi Live CSS Editor](https://chrome.google.com/webstore/detail/navi-live-css-editor/cbiegoddgmmhbaompgcnkhjgonpkpogc). Here are some other examples of CSS editors that are chrome extensions.
+
+* [Amino](https://chrome.google.com/webstore/detail/amino-live-css-editor/pbcpfbcibpcbfbmddogfhcijfpboeaaf?hl=en-GB)
+* [Live CSS Editor](http://www.livecsseditor.com/)
+* [Visual CSS Editor](https://chrome.google.com/webstore/detail/visual-css-editor/mibmnbcmaafgepannenjiemibkojedam) (this one is more GUI-driven)
+
+## Restrictions
+
+* Your project must use JavaScript.
+* Your project must NOT have a backend component. (It really isn't needed)
+* FOR WEBSITE-ONLY PROJECTS: You must deploy your project online.
+* FOR CHROME EXTENSIONS: `IMPORTANT` For security purposes, I will NOT be installing anyone's extensions on my local machine. To get aesthetic points for your extension, please upload a 1 to 2 minute video of you using the extension to edit a 3rd party website.
+
+There are no other restrictions.
 
 ## Tips for success:
 
