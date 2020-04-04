@@ -4,7 +4,7 @@
 
 $25 CAD Amazon gift card + bragging rights.
 
-Tip: Read the [General Information Document]("./General%20Information.md") for more info on how to get started and submit.
+Tip: Read the [General Information Document](General%20Information.md) for more info on how to get started and submit.
 
 ## Objective
 

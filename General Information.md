@@ -20,11 +20,12 @@ Saturday, March 21, 2020
 
 | Start | End  | Description |
 |-------|------|-------------|
-| 12:00pm  | 12:30pm | (Optional) Orientation |
-| 12:30pm  | 12:45pm | Requirements Briefing |
-| 12:45pm  | 3:00pm | Part 1 - Programming |
-| 3:00pm  | 3:30pm | Part 2 - Code Review |
-| 3:30pm  | 4:00pm | (Optional) Q&A |
+| 12:00pm  | 12:30pm | (Optional) Orientation for newcomers and people who need a refresh |
+| 12:30pm  | 12:45pm | Introduction, problem set briefing, and initial Q&A |
+| 12:45pm  | 3:00pm | Part 1 - Programming (Solo, heads-down) |
+| 3:00pm  | 3:30pm | Code Review how-to instructions |
+| 3:30pm  | 4:00pm | Part 2 - Code Review (in groups) |
+| 4:00pm  | 4:30pm | (Optional) Q&A w/ Monarch |
 
 ## Your responsibilities as a participant
 
