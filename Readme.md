@@ -1,4 +1,4 @@
-# Today's Objective: Live CSS Editor
+# Today's Objective: Roll your own Chrome dashboard
 
 ## Prize
 
@@ -8,69 +8,71 @@ Tip: Read the [General Information Document](General%20Information.md) for more 
 
 ## Objective
 
-Today's objective is to create an in-site CSS editor of your own design.
+* `IMPORTANT` For security purposes, I will NOT be installing anyone's extensions on my local machine. To get Aesthetic points for your extension, please upload a 1 to 2 minute demo of the extension.
 
-Live CSS editors are handy tools that let you edit a website's styling in realtime. They are indispensible when building design-heavy websites, letting you iterate quickly through several different versions of a design before deciding what version you want to keep.
+Today's objective is to create your own dashboard for Chrome.
 
-Quick flashback: In 2017, I built a CSS editor that could edit the look of a website on the fly. [You can still find it on the Chrome extension webstore](https://chrome.google.com/webstore/detail/navi-live-css-editor/cbiegoddgmmhbaompgcnkhjgonpkpogc). I named it after my wife, Navi (who is also involved with Mintbean, by the way). browniePoints++ :-)
+Dashboards (a.k.a. "New Tab" pages) are a popular type of Chrome extension. Dashboards are relatively easy to build. In fact, they're amazing 1st projects for anyone looking to learn how to build a Chrome extension.
 
-## Requirements - NOT a Chrome Extension
+A very well-known one is [Momentum](https://momentumdash.com/), which replaces your New Tab page with a beautiful image, a clock, and an inspirational quote. Another is [Gyroscope](https://gyrosco.pe/chrome/), which gives you your personal statistics, and [Homey](https://chrome.google.com/webstore/detail/homey-your-startpage-assi/lllnjdmfnfjifcfpppjmcnanpokikcpl), which decorates your New Tab with a beautiful wallpaper and several widgets.
+
+## Requirements
 
 So, this is your task:
 
-Create a CSS Editor. When you type some CSS in the editor, it is immediately applied to the current website.
+Create a Chrome extension that replaces your "New Tab" page with a design of your own choosing. 
 
-You do NOT need to build a Chrome Extension. You can build this right inside a web application.
+That's it!
 
-Let's talk about the architecture.
+But of course, only the most interesting, useful, and cool designs will have a chance of winning -- and they must be written well, too. So, get creative :-)
 
-### Architecture
 
-There are 3 components you need here.
+### How to build a Chrome extension
 
-First, you need an input field where you'll write code. This is either a plain textbox, a `div` with the `contenteditable` attribute, or a full-fledged library-driven editor like Ace or CodeMirror. See below for suggestions.
+A Chrome extension is basically a `.zip` file. This project will contain a simple HTML page and some JS files zipped into a Chrome extension.
 
-Second, you need some kind of onChange listener that listens for changes to the input field.
+Given time constraints, you should definitely NOT build a backend component for this project.
 
-Third, you need a `style` tag that contains and gets updated with CSS. All you should have to do is output your CSS into the `style` tag's innerHTML, and the browser should pick it up immediately. 
+You can read the following resources to get familiar with how to create this extension:
+* [StackOverflow page showing you how to create a New Tab](https://stackoverflow.com/questions/39916079/how-to-create-a-chrome-extension-to-change-the-default-tab)
+* [Chrome Extension documentation](https://developer.chrome.com/extensions)
 
-Tada! CSS Editor!
+## Suggested projects
 
-## Library suggestions
+You can create a project of your own choosing, as long as it replaces New Tab.
 
-Let's talk about what you can use to build this.
+Please make sure you pick something that can be completed in 2 hours AND with good quality code. So keep it simple :-)
 
-You should definitely NOT build a backend component for this project. This project is very easy to implement, and can be done with a simple HTML page and some JS files.
+Here are some suggestions to get your brain juices flowing.
 
-Also, building a code editor from scratch is NOT recommended. Features like error-checking, linting, syntax highlighting, theming, and the like are very advanced and completely out of scope for this Hackathon. Instead, you might consider using a library.
+(Feel free to mix and match)
 
-I've used the following libraries to do stuff like this, and they work pretty well:
-* Option 1: Ace Editor (easier and more polished. recommended for most people.)
-* Option 2: CodeMirror (slightly harder but more customizable, and fully open source)
+* New Tab wallpaper replacer (Easy)
+* New Tab with useful links (Easy)
+* Notepad which persists its data (Easy)
+* Useful utilities dashboard, like calculators and converters (Easy to Medium)
+* News dashboard (Medium)
+* Bitcoin and stock prices tracker (Medium)
+* A simple game (Hard)
 
-BUT! If using a library seems daunting, you can just use a plain textbox!
-* Option 3, for newbies: Use a plain textbox to write CSS in. No need to implement any advanced features at all :-)
+### Frameworks:
 
-The design can be of your own choosing, and so this project is very open-ended.
+If you're building something complex, it is recommended that you use a framework such as React, Vue, Angular or jQuery.
 
-### Bonus Points: Package it as a Chrome Extension and upload a video
+Chrome extensions can be built with any framework. But if you don't want to use a framework, that's totally fine, too. Especially for this project, where a basic New Tab can be built with a simple HTML file.
 
-Feeling gutsy? Want to do something out-of-the-ordinary?
+### APIs:
 
-Building a chrome extension will get you extra points in Aesthetics and Code Quality. But please, only attempt it if you are confident about it :-) It can be tricky the first time around.
+Here are some useful suggestions:
 
-You've already seen the extension I built: [Navi Live CSS Editor](https://chrome.google.com/webstore/detail/navi-live-css-editor/cbiegoddgmmhbaompgcnkhjgonpkpogc). Here are some other examples of CSS editors that are chrome extensions.
-
-* [Amino](https://chrome.google.com/webstore/detail/amino-live-css-editor/pbcpfbcibpcbfbmddogfhcijfpboeaaf?hl=en-GB)
-* [Live CSS Editor](http://www.livecsseditor.com/)
-* [Visual CSS Editor](https://chrome.google.com/webstore/detail/visual-css-editor/mibmnbcmaafgepannenjiemibkojedam) (this one is more GUI-driven)
+* [Get a random HD wallpaper from Unsplash](https://source.unsplash.com/) (Use `https://source.unsplash.com/random/3840x2160` for HD wallpapers)
+* [Public APIs](https://github.com/public-apis/public-apis) where you can source more data. (Look for "Auth: No, CORS: Yes". These APIs don't need additional overhead such as registration in order to work with them)
 
 ## Restrictions
 
 * Your project must use JavaScript.
 * Your project must NOT have a backend component. (It really isn't needed)
-* FOR WEBSITE-ONLY PROJECTS: You must deploy your project online.
-* FOR CHROME EXTENSIONS: `IMPORTANT` For security purposes, I will NOT be installing anyone's extensions on my local machine. To get aesthetic points for your extension, please upload a 1 to 2 minute video of you using the extension to edit a 3rd party website.
+* `IMPORTANT` For security purposes, I will NOT be installing anyone's extensions on my local machine. To get Aesthetic points for your extension, please upload a 1 to 2 minute demo of the extension.
 
 There are no other restrictions.
 
